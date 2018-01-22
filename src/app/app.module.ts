@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,10 +22,7 @@ import { NotesModule } from './notes/notes.module';
 import { ProductsModule } from './products/product.module';
 ///// End FireStarter
 
-import { environment } from '../environments/environment';
-
 import { AngularFireModule } from 'angularfire2';
-export const firebaseConfig = environment.firebaseConfig;
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
@@ -43,7 +41,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     UiModule,
     NotesModule,
     ProductsModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   bootstrap: [
     AppComponent,
